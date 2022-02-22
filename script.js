@@ -6,21 +6,20 @@ const ul = document.querySelector("ul");
 
 const options = {
   threshold: 0,
-  rootMargin: "-100px",
+  rootMargin: "-20px",
 };
 
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      button.classList.add("newHamburgerColor");
-    } else {
-      button.classList.remove("newHamburgerColor");
-    }
+    if (!entry.isIntersecting) return button.classList.add("newHamburgerColor");
+    return button.classList.remove("newHamburgerColor");
   });
 }, options);
 
 const sectionOne = document.querySelector(".section1");
 observer.observe(sectionOne);
+const footerOne = document.querySelector(".footer1");
+observer.observe(footerOne);
 
 button.addEventListener("click", () => {
   header.classList.toggle("filter");

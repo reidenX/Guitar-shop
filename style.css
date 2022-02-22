@@ -32,6 +32,14 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: burlywood;
+  border-radius: 10px;
+}
 img {
   max-width: 100%;
 }
@@ -202,9 +210,14 @@ a {
     display: grid;
     grid-template-columns: 5% repeat(3, 1fr) 5%;
   }
+
+  .section1 p,
+  .arrow {
+    align-self: end;
+  }
+
   .section1 p {
     grid-column: 4/5;
-    align-self: end;
     justify-self: end;
     padding-bottom: 2.5em;
     font-size: var(--font_qoute);
@@ -214,7 +227,6 @@ a {
   .arrow {
     grid-column: 3/4;
     justify-self: center;
-    align-self: end;
   }
 
   .arrow2 {
